@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robale H. Abdi Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #e0f0ff;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-left: 4px solid #0077b6;
+      padding-left: 0.5rem;
+    }
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+    .skills li {
+      background: #e0f0ff;
+      margin: 0.3rem 0;
+      padding: 0.5rem;
+      border-left: 4px solid #0077b6;
+    }
+    footer {
+      background-color: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Robale H. Abdi</h1>
+    <p>Junior Data Analyst | HACCP Leader | Sustainability Advocate</p>
+    <p><a href="mailto:robiabdi93@gmail.com">robiabdi93@gmail.com</a> | <a href="https://www.linkedin.com/in/robale-h-abdi-225434219" target="_blank">LinkedIn</a></p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#project">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm an accomplished Junior Data Analyst with a passion for food safety, sustainable business practices, and data-driven solutions. With hands-on experience in ISO 22000:2018 implementation, ILO’s SCORE program, and marketing analytics, I aim to merge technology and purpose to uplift communities.</p>
+    </section>
+
+    <section id="project">
+      <h2>Project Spotlight – ISO 22000 Audit Tracker</h2>
+      <p><strong>Objective:</strong> Track food safety compliance across departments and identify improvement areas.</p>
+      <canvas id="auditChart" style="max-width: 700px;"></canvas>
+      <p><em>Key Wins:</em> Increased audit compliance by 10% across departments. Used Excel and Python to track KPIs and visualize gaps.</p>
+    </section>
+
+    <section>
+      <h2>Sustainability Dashboard – SCORE Program</h2>
+      <canvas id="sustainabilityChart" style="max-width: 700px;"></canvas>
+      <p><em>Key Wins:</em> Achieved 25% increase in productivity, 35% reduction in waste, and 70% decrease in customer complaints using ILO SCORE methodology and data tracking tools.</p>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>Skills & Tools</h2>
+      <ul>
+        <li><strong>Languages/Tools:</strong> SQL, Excel, Python (Pandas, Plotly, Streamlit)</li>
+        <li><strong>Soft Skills:</strong> Storytelling with Data, Leadership, Problem Solving</li>
+        <li><strong>Certifications:</strong> ISO 22000:2018, HACCP, Data Analytics (ALX), Project Management</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Have a project or opportunity? Let’s connect!</p>
+      <p><a href="mailto:robiabdi93@gmail.com">Send me an email</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Robale H. Abdi | Portfolio Website</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const auditCtx = document.getElementById('auditChart').getContext('2d');
+    const auditChart = new Chart(auditCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Production', 'Packaging', 'Storage', 'Distribution'],
+        datasets: [
+          {
+            label: 'Audit Score (2023)',
+            data: [85, 90, 78, 88],
+            backgroundColor: 'rgba(0, 119, 182, 0.6)'
+          },
+          {
+            label: 'Audit Score (2024)',
+            data: [92, 94, 85, 90],
+            backgroundColor: 'rgba(0, 200, 83, 0.6)'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+
+    const sustainCtx = document.getElementById('sustainabilityChart').getContext('2d');
+    const sustainabilityChart = new Chart(sustainCtx, {
+      type: 'line',
+      data: {
+        labels: ['Productivity', 'Waste Reduction', 'Team Efficiency', 'Customer Complaints'],
+        datasets: [
+          {
+            label: 'Before SCORE (%)',
+            data: [60, 40, 55, 30],
+            borderColor: '#ff5722',
+            fill: false,
+            tension: 0.3
+          },
+          {
+            label: 'After SCORE (%)',
+            data: [85, 75, 80, 10],
+            borderColor: '#4caf50',
+            fill: false,
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
